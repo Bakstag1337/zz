@@ -1,114 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zalando Lounge — AI Shopping Assistant Demo</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Top Banner -->
-<header class="top-banner">
-    <div class="banner-left">
-        <div class="logo">
-            <span class="logo-z">ZALANDO</span>
+<!-- ===== Header ===== -->
+<header class="header">
+    <div class="header-inner">
+        <a href="#" class="logo" onclick="showCampaigns(); return false;">
+            <span class="logo-zalando">ZALANDO</span>
             <span class="logo-lounge">LOUNGE</span>
+        </a>
+        <nav class="nav">
+            <a href="#" class="nav-link active">Damen</a>
+            <a href="#" class="nav-link">Herren</a>
+            <a href="#" class="nav-link">Kinder</a>
+            <a href="#" class="nav-link">Home &amp; Living</a>
+        </nav>
+        <div class="header-actions">
+            <button class="header-icon" title="Suche">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+            <button class="header-icon" title="Wunschliste">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="header-icon cart-icon" title="Warenkorb">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span class="cart-count">2</span>
+            </button>
+            <button class="header-icon" title="Mein Konto">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </button>
         </div>
-    </div>
-    <nav class="main-nav">
-        <a href="#" class="nav-link active">Women</a>
-        <a href="#" class="nav-link">Men</a>
-        <a href="#" class="nav-link">Kids</a>
-        <a href="#" class="nav-link">Home & Living</a>
-    </nav>
-    <div class="banner-right">
-        <button class="icon-btn" title="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        </button>
-        <button class="icon-btn" title="Wishlist">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </button>
-        <button class="icon-btn cart-btn" title="Cart">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span class="cart-badge">2</span>
-        </button>
-        <button class="icon-btn user-btn" title="Account">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
     </div>
 </header>
 
-<!-- Sale countdown bar -->
-<div class="sale-bar">
-    <span>🔥 Flash Sale ends in <strong id="countdown">02:47:33</strong> — Up to <strong>75% off</strong> top brands</span>
+<!-- ===== Sub-nav tabs ===== -->
+<div class="sub-nav">
+    <div class="sub-nav-inner">
+        <a href="#" class="sub-nav-link active">Alle Aktionen</a>
+        <a href="#" class="sub-nav-link">Schuhe</a>
+        <a href="#" class="sub-nav-link">Bekleidung</a>
+        <a href="#" class="sub-nav-link">Accessoires</a>
+        <a href="#" class="sub-nav-link">Sport</a>
+        <a href="#" class="sub-nav-link">Premium</a>
+        <a href="#" class="sub-nav-link">Beauty</a>
+    </div>
 </div>
 
-<!-- Main Content -->
-<main class="main-content">
-    <!-- Product Grid -->
-    <section class="products-section">
-        <h2 class="section-title">Today's Deals — Curated for You</h2>
-        <div class="product-grid" id="productGrid">
-            <!-- Products injected by JS -->
-        </div>
-    </section>
+<!-- ===== Main: Campaigns view ===== -->
+<main class="main" id="mainCampaigns">
+    <!-- Sections injected by JS -->
 </main>
 
-<!-- AI Assistant FAB -->
+<!-- ===== Main: Campaign detail (products) ===== -->
+<main class="main hidden" id="mainProducts">
+    <div class="product-view-header" id="productViewHeader">
+        <!-- Injected by JS -->
+    </div>
+    <div class="product-filters" id="productFilters">
+        <button class="filter-chip active">Alle</button>
+        <button class="filter-chip">Kleider</button>
+        <button class="filter-chip">Oberteile</button>
+        <button class="filter-chip">Hosen</button>
+        <button class="filter-chip">Schuhe</button>
+        <button class="filter-chip">Accessoires</button>
+    </div>
+    <div class="product-grid" id="productGrid">
+        <!-- Injected by JS -->
+    </div>
+</main>
+
+<!-- ===== AI FAB ===== -->
 <button class="ai-fab" id="aiFab" title="AI Shopping Assistant">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v2a2 2 0 0 0 1 1.73V18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.27A2 2 0 0 0 20 10V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15h6" stroke-linecap="round"/></svg>
-    <span class="fab-pulse"></span>
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <path d="M8 10h.01M12 10h.01M16 10h.01" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <span class="fab-badge">AI</span>
+    <span class="fab-ring"></span>
 </button>
 
-<!-- AI Assistant Panel -->
+<!-- ===== AI Chat Panel ===== -->
 <div class="ai-panel" id="aiPanel">
-    <div class="ai-panel-header">
-        <div class="ai-header-left">
-            <div class="ai-avatar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v2a2 2 0 0 0 1 1.73V18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.27A2 2 0 0 0 20 10V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15h6" stroke-linecap="round"/></svg>
+    <div class="ai-header">
+        <div class="ai-header-info">
+            <div class="ai-header-avatar">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
             </div>
             <div>
-                <h3>Lounge AI Assistant</h3>
-                <span class="ai-status">Online — ready to help</span>
+                <div class="ai-header-title">Lounge AI Assistant</div>
+                <div class="ai-header-subtitle">Immer für dich da</div>
             </div>
         </div>
-        <button class="ai-close" id="aiClose">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <button class="ai-header-close" id="aiClose">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
     </div>
-
-    <div class="ai-messages" id="aiMessages">
+    <div class="ai-body" id="aiMessages">
         <!-- Messages injected by JS -->
     </div>
-
-    <!-- Quick actions -->
-    <div class="ai-quick-actions" id="quickActions">
-        <button class="quick-action" data-prompt="Find me a black dress for a cocktail party under €80">🖤 Black dress for party</button>
-        <button class="quick-action" data-prompt="What size should I choose? I usually wear EU 38">📏 Help me with sizing</button>
-        <button class="quick-action" data-prompt="Show me trending sneakers on sale right now">👟 Trending sneakers</button>
-        <button class="quick-action" data-prompt="Track my recent order">📦 Track my order</button>
-        <button class="quick-action" data-prompt="Suggest an outfit for a job interview">👔 Interview outfit</button>
+    <div class="ai-suggestions" id="quickActions">
+        <button class="ai-chip" data-prompt="Finde mir ein schwarzes Kleid für eine Cocktailparty unter 80€">Schwarzes Kleid für Party</button>
+        <button class="ai-chip" data-prompt="Welche Größe passt mir? Ich trage normalerweise EU 38">Größenberatung</button>
+        <button class="ai-chip" data-prompt="Zeig mir trendige Sneaker im Sale">Sneaker im Sale</button>
+        <button class="ai-chip" data-prompt="Wo ist meine Bestellung?">Bestellung verfolgen</button>
+        <button class="ai-chip" data-prompt="Stelle mir ein Outfit für ein Vorstellungsgespräch zusammen">Outfit-Beratung</button>
     </div>
-
-    <div class="ai-input-area">
-        <input type="text" id="aiInput" placeholder="Ask me anything about fashion, sizing, orders..." autocomplete="off">
-        <button class="ai-send" id="aiSend">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    <div class="ai-input-bar">
+        <input type="text" id="aiInput" placeholder="Frag mich etwas..." autocomplete="off">
+        <button class="ai-send-btn" id="aiSend">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="m22 2-10 10"/></svg>
         </button>
     </div>
 </div>
 
-<!-- Product Quick View Modal -->
-<div class="modal-overlay" id="modalOverlay">
+<!-- ===== Product Quick View Modal ===== -->
+<div class="overlay" id="modalOverlay">
     <div class="modal" id="productModal">
         <button class="modal-close" id="modalClose">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
-        <div class="modal-body" id="modalBody">
-            <!-- Injected by JS -->
-        </div>
+        <div class="modal-body" id="modalBody"></div>
     </div>
 </div>
 

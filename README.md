@@ -1,45 +1,36 @@
 # Zalando Lounge — AI Shopping Assistant Demo
 
-A concept demo showcasing how an AI assistant could be integrated into the Zalando Lounge web experience.
-
-## Features
-
-- **Product Discovery** — Ask the assistant to find items by occasion, style, or budget
-- **Size Recommendations** — AI-powered size suggestions based on customer data
-- **Order Tracking** — Real-time order status with visual timeline
-- **Outfit Builder** — Get complete outfit suggestions for any occasion
-- **Product Quick View** — Click any product card, then "Ask AI" for instant insights
+Interactive concept demo showing how an AI assistant could integrate into the Zalando Lounge web experience.
 
 ## How to Run
 
-Simply open `index.html` in your browser — no build tools or dependencies required.
-
 ```bash
-# or use a local server
+# Just open index.html in your browser, or:
 npx serve .
 ```
 
-## Demo Scenarios
+No dependencies. No build step. Pure HTML + CSS + JS.
 
-Click the AI assistant button (bottom-right) and try these:
+## What's Inside
 
-| Quick Action | What It Shows |
-|---|---|
-| 🖤 Black dress for party | Product search with filters |
-| 📏 Help me with sizing | Size recommendation engine |
-| 👟 Trending sneakers | Curated product cards |
-| 📦 Track my order | Order tracking timeline |
-| 👔 Interview outfit | Full outfit suggestion with total savings |
+### Campaign-Based Layout (like the real Zalando Lounge)
+- **Startet heute** — Hero grid (2 large) + standard grid (4 columns)
+- **Endet bald** — Campaigns with countdown timers
+- **Kommt bald** — Upcoming sales preview
+- Click any campaign to browse products inside that brand sale
+- Product cards with discount badges, favorites, and quick-view modal
 
-## Tech Stack
+### AI Shopping Assistant (bottom-right button)
+- **Product Search** — "Schwarzes Kleid für Party" → curated results with inline "Add to Cart"
+- **Size Recommendation** — AI-powered size suggestions with confidence scores
+- **Order Tracking** — Visual delivery timeline
+- **Outfit Builder** — Complete outfit suggestions with total savings
+- **Product Q&A** — Click "AI fragen" on any product modal
 
-Pure HTML + CSS + JavaScript — no frameworks, no build step. Designed to demonstrate UX concepts, not production architecture.
-
-## Screenshots
-
-Open the demo and interact with the AI chat panel to see:
-
-- Inline product cards with "Add to Cart"
-- Smart size recommendations with confidence scores
-- Visual order tracking timeline
-- Product quick-view modal with "Ask AI" integration
+### Design Details
+- Dark header matching Zalando Lounge branding
+- Orange (#ff4e00) accent color
+- Campaign cards with gradient backgrounds
+- German UI text (Damen / Herren / Kinder / Home & Living)
+- Sub-navigation with category filters
+- Responsive layout (desktop, tablet, mobile)
